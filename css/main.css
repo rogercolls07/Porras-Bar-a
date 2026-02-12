@@ -1,0 +1,169 @@
+:root {
+  --primary-color: #c90d0d;
+  --second-color: #080fdc;
+  --third-color: #f6f6fe;
+  --fourth-color: #e5e6fc;
+  --fifth-color: #888ac6;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+body {
+  font-family: Arial, Helvetica, sans-serif;
+  background-color: var(--fourth-color);
+}
+
+header {
+  background-color: var(--primary-color);
+  background: var(--primary-color);
+  background: radial-gradient(circle, var(--primary-color) 60%, var(--second-color) 100%);
+  margin-bottom: 3rem;
+}
+h1 {
+  font-size: 3rem;
+  font-weight: bold;
+  padding: 2rem;
+  text-align: center;
+  color: var(--third-color);
+}
+
+main {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+form {
+  border: 2px solid var(--second-color);
+  border-radius: 4px;
+  padding: 2.5rem;
+  background-color: var(--third-color);
+}
+.form-group {
+  padding: 0.5rem;
+  margin-bottom: 0.4rem;
+}
+input, textarea {
+  border: 1px solid var(--second-color);
+  border-radius: 4px;
+  color: var(--second-color);
+}
+input:not(input[type="radio"], input[type="checkbox"]), textarea, select {
+  width: 100%;
+  font-size: 1.25rem;
+  line-height: 1.75rem;
+}
+/* input:focus {
+  border-color: var(--primary-color);
+} */
+
+label {
+  display: block;
+  margin-bottom: 0.35rem;
+  font-size: 1.1rem;
+}
+.inline {
+  display: inline;
+}
+.btn {
+  width: 50%;
+  height: 2.5rem;
+  margin: 0 auto;
+  margin-top: 2rem;
+  display: block;
+  font-size: 1.25rem;
+  border: 1px solid var(--second-color);
+  border-radius: 8px;
+  background-color: var(--fifth-color);
+  color: var(--third-color);
+  cursor: pointer;
+}
+.btn:hover {
+  background-color: var(--primary-color);
+}
+
+/* Per marcar tots els camps obligatoris igual */
+.is-required::after {
+  content: '*';
+  color: red;
+}
+
+body {
+    /* Ruta de tu imagen */
+    background-image: url('/imatges/fc-barcelona-background.jpg');
+
+    /* Evita que la imagen se repita */
+    background-repeat: no-repeat;
+
+    /* Fija la imagen para que no se mueva al hacer scroll */
+    background-attachment: fixed;
+
+    /* Escala la imagen para que cubra todo el ancho y alto */
+    background-size: cover;
+
+    /* Centra la imagen */
+    background-position: center;
+}
+
+/* Ajustes adicionales para mejorar la legibilidad del formulario */
+
+main {
+  flex-direction: column; /* Por si decides poner varios formularios */
+  padding: 2rem;
+}
+
+form {
+  width: 100%;
+  max-width: 400px; /* Evita que el formulario sea gigante en pantallas grandes */
+  box-shadow: 0px 10px 30px rgba(0, 0, 0, 0.3); /* Le da profundidad sobre el fondo */
+}
+
+/* Estilo para los inputs cuando el usuario hace clic */
+input:focus {
+  outline: none;
+  border-color: var(--primary-color);
+  box-shadow: 0 0 5px var(--fifth-color);
+}
+
+/* Pequeño ajuste para que el botón no sea tan rígido */
+.btn {
+  transition: background-color 0.3s ease, transform 0.1s;
+}
+
+.btn:active {
+  transform: scale(0.98);
+}
+
+/* --- RESPONSIVE MÓBIL. --- */
+
+/* Dispositivos móviles (pantallas menores a 600px) */
+@media (max-width: 600px) {
+  h1 {
+    font-size: 1.8rem; /* Reducimos el título para que no ocupe toda la pantalla */
+    padding: 1.5rem 1rem;
+  }
+
+  header {
+    margin-bottom: 1.5rem; /* Menos margen arriba */
+  }
+
+  main {
+    padding: 1rem; /* Menos espacio alrededor para ganar ancho */
+  }
+
+  form {
+    padding: 1.5rem; /* Reducimos el relleno interno del formulario */
+    width: 95%;     /* Que ocupe casi todo el ancho del móvil */
+  }
+
+  .btn {
+    width: 100%;    /* El botón es más fácil de pulsar si ocupa todo el ancho en móvil */
+    height: 3rem;   /* Un poco más alto para el dedo */
+  }
+
+  input:not(input[type="radio"], input[type="checkbox"]) {
+    font-size: 1rem; /* Evita que iOS haga zoom automático al enfocar el input */
+  }
+}
+
